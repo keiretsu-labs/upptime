@@ -1,31 +1,114 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# Keiretsu Upptime — uptime monitor & status page for public-facing endpoints
+# Powered entirely by GitHub Actions, Issues, and Pages. Docs: https://upptime.js.org/docs
+owner: keiretsu-labs
+repo: upptime
 
+# Public-facing endpoints, grouped by cluster.
+# COMMON_DOMAIN endpoints use keiretsu.top; per-cluster endpoints use the cluster domain
+# (ottawa=killinit.cc, robbinsdale=lukehouge.com, stpetersburg=rajsingh.info).
+# Only publicly-resolvable routes attached to the `public` Gateway are included.
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Test Broken Site
-    url: https://thissitedoesnotexist.koj.co
+  # ===== Common (keiretsu.top) =====
+  - name: Keiretsu Home
+    url: https://keiretsu.top
+  - name: Keiretsu WWW
+    url: https://www.keiretsu.top
+  - name: Garage S3 (CDN)
+    url: https://s3.cdn.keiretsu.top
+    expectedStatusCodes:
+      - 403 # Garage returns 403 at root with no bucket/credentials — healthy
+
+  # ===== Ottawa (killinit.cc) =====
+  - name: "Ottawa: Homer Dashboard"
+    url: https://home.killinit.cc
+  - name: "Ottawa: Gatus Status"
+    url: https://status.killinit.cc
+  - name: "Ottawa: Kener Status"
+    url: https://kener.killinit.cc
+  - name: "Ottawa: Grafana"
+    url: https://grafana.killinit.cc
+  - name: "Ottawa: Forgejo"
+    url: https://forgejo.killinit.cc
+  - name: "Ottawa: Zot OCI Registry"
+    url: https://oci.killinit.cc
+  - name: "Ottawa: Kromgo"
+    url: https://kromgo.killinit.cc
+  - name: "Ottawa: Frigate"
+    url: https://frigate.killinit.cc
+  - name: "Ottawa: Immich"
+    url: https://immich.killinit.cc
+  - name: "Ottawa: Jellyfin"
+    url: https://jellyfin.killinit.cc
+  - name: "Ottawa: Jellyseerr"
+    url: https://jellyseerr.killinit.cc
+  - name: "Ottawa: Overseerr"
+    url: https://overseerr.killinit.cc
+  - name: "Ottawa: Plex"
+    url: https://plex.killinit.cc
+    expectedStatusCodes:
+      - 401 # Plex returns 401 at root without a token — healthy
+  - name: "Ottawa: Tautulli"
+    url: https://tautulli.killinit.cc
+  - name: "Ottawa: Wizarr"
+    url: https://wizarr.killinit.cc
+
+  # ===== Robbinsdale (lukehouge.com) =====
+  - name: "Robbinsdale: Homer Dashboard"
+    url: https://home.lukehouge.com
+  - name: "Robbinsdale: Gatus Status"
+    url: https://status.lukehouge.com
+  - name: "Robbinsdale: Grafana"
+    url: https://grafana.lukehouge.com
+  - name: "Robbinsdale: Zot OCI Registry"
+    url: https://oci.lukehouge.com
+  - name: "Robbinsdale: Kromgo"
+    url: https://kromgo.lukehouge.com
+  - name: "Robbinsdale: Immich"
+    url: https://immich.lukehouge.com
+  - name: "Robbinsdale: Jellyfin"
+    url: https://jellyfin.lukehouge.com
+  - name: "Robbinsdale: Jellyseerr"
+    url: https://jellyseerr.lukehouge.com
+  - name: "Robbinsdale: Jellystat"
+    url: https://jellystat.lukehouge.com
+  - name: "Robbinsdale: Overseerr"
+    url: https://overseerr.lukehouge.com
+  - name: "Robbinsdale: Tautulli"
+    url: https://tautulli.lukehouge.com
+  - name: "Robbinsdale: Wizarr"
+    url: https://wizarr.lukehouge.com
+
+  # ===== St. Petersburg (rajsingh.info) =====
+  - name: "StPetersburg: Homer Dashboard"
+    url: https://home.rajsingh.info
+  - name: "StPetersburg: Gatus Status"
+    url: https://status.rajsingh.info
+  - name: "StPetersburg: Grafana"
+    url: https://grafana.rajsingh.info
+  - name: "StPetersburg: Zot OCI Registry"
+    url: https://oci.rajsingh.info
+  - name: "StPetersburg: Kromgo"
+    url: https://kromgo.rajsingh.info
+  - name: "StPetersburg: Home Assistant"
+    url: https://homeassistant.rajsingh.info
+  - name: "StPetersburg: Jellyfin"
+    url: https://jellyfin.rajsingh.info
+  - name: "StPetersburg: Tailbench"
+    url: https://tailbench.rajsingh.info
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  cname: status.keiretsu.top
+  name: Keiretsu Status
+  logoUrl: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/gatus.svg
+  introTitle: "Keiretsu Infrastructure Status"
+  introMessage: Real-time uptime monitoring for Keiretsu public-facing endpoints across the **Ottawa**, **Robbinsdale**, and **St. Petersburg** clusters. Powered by [Upptime](https://upptime.js.org) — GitHub Actions, Issues, and Pages. No server required.
   navbar:
     - title: Status
       href: /
     - title: GitHub
       href: https://github.com/$OWNER/$REPO
 
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+# Notifications routed to the same Discord channel as our Gatus alerts
+notifications:
+  - type: discord
+    url: "https://discord.com/api/webhooks/1503500166303318046/qgr6Hcfx9ku8gkgiU45U5JnzsMCijHd7C22U-6C8p-5oCqFNbZ-Z7-CkRd5zs_MP1uV8"
