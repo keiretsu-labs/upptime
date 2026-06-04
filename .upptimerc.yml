@@ -97,7 +97,10 @@ sites:
     url: https://tailbench.rajsingh.info
 
 status-website:
-  cname: status.keiretsu.top
+  # NOTE: status.keiretsu.top is already owned by the k8gb GSLB (self-hosted gatus/kener).
+  # Serving at the github.io path for now; switch to a dedicated subdomain via a GitOps
+  # DNS change (e.g. uptime.keiretsu.top) if a custom domain is wanted.
+  baseUrl: /upptime
   name: Keiretsu Status
   logoUrl: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/gatus.svg
   introTitle: "Keiretsu Infrastructure Status"
