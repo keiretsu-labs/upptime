@@ -1,7 +1,7 @@
 url: https://frigate.killinit.cc
-status: up
-code: 200
-responseTime: 293
-lastUpdated: 2026-06-07T00:04:52.934Z
+status: down
+code: 500
+responseTime: 136
+lastUpdated: 2026-06-07T06:06:54.759Z
 startTime: 2026-06-04T22:38:54.237Z
 generator: Upptime <https://github.com/upptime/upptime>
