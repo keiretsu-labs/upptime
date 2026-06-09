@@ -1,7 +1,7 @@
 url: https://grafana.lukehouge.com
-status: down
-code: 502
-responseTime: 140
-lastUpdated: 2026-06-09T00:07:33.040Z
+status: up
+code: 200
+responseTime: 384
+lastUpdated: 2026-06-09T05:48:59.789Z
 startTime: 2026-06-04T22:38:59.311Z
 generator: Upptime <https://github.com/upptime/upptime>
